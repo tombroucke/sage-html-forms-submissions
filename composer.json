@@ -1,5 +1,5 @@
 {
-  "name": "tombroucke/sage-html-forms-submission",
+  "name": "tombroucke/sage-html-forms-submissions",
   "type": "package",
   "description": "Show HTML Forms submissions through a shortcode",
   "license": "MIT",
