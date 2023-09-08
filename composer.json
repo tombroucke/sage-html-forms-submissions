@@ -1,0 +1,27 @@
+{
+  "name": "tombroucke/sage-html-forms-submission",
+  "type": "package",
+  "description": "Show HTML Forms submissions through a shortcode",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tom Broucke",
+      "email": "tom@tombroucke.be"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Otomaties\\SageHtmlFormsSubmissions\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.0"
+  },
+  "extra": {
+    "acorn": {
+      "providers": [
+        "Otomaties\\SageHtmlFormsSubmissions\\Providers\\SageHtmlFormsSubmissionsServiceProvider"
+      ]
+    }
+  }
+}
