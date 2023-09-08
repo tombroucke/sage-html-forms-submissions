@@ -1,31 +1,37 @@
-# Acorn Example Package
+# Sage HTML Forms submissions
 
-This repo can be used to scaffold an Acorn package. See the [Acorn Package Development](https://roots.io/acorn/docs/package-development/) docs for further information.
+This package adds some functionality to the [HTML Forms plugin](https://wordpress.org/plugins/html-forms/).
+
 
 ## Installation
 
 You can install this package with Composer:
 
 ```bash
-composer require vendor-name/example-package
+composer require tombroucke/sage-html-forms-submissions
 ```
 
-You can publish the config file with:
+## Shortcodes
 
-```shell
-$ wp acorn vendor:publish --provider="VendorName\ExamplePackage\Providers\ExampleServiceProvider"
+### Show list of submissions
+```
+[sage_html_forms_submissions slug="petition" fields="name:Name"]
 ```
 
-## Usage
+| Attribute   | Description |
+| ----------- | ----------- |
+| slug        | The form slug for which you want to display submissions (*)      |
+| id          | The form id for which you want to display submissions (*)        |
+| fields      | Comma-separated list of fields you want to show. field_key:Label |
 
-From a Blade template:
+(*) Only one is needed
 
-```blade
-@include('Example::example')
+### Show submission count
+```
+[sage_html_forms_submissions_count slug="petition"]
 ```
 
-From WP-CLI:
-
-```shell
-$ wp acorn example
-```
+| Attribute   | Description |
+| ----------- | ----------- |
+| slug        | The form slug for which you want to display submissions (*)      |
+| id          | The form id for which you want to display submissions (*)        |

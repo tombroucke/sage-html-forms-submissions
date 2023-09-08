@@ -3,7 +3,7 @@
     <thead>
       <tr>
         @foreach($fields as $key => $value)
-          <th>{{ $value }}</th>
+          <th>{{ esc_html($value) }}</th>
         @endforeach
       </tr>
     </thead>
@@ -11,7 +11,7 @@
       @foreach($submissions as $submission)
         <tr>
           @foreach($submission as $key => $value)
-            <td>{{ $value }}</td>
+            <td>{{ esc_html($value) }}</td>
           @endforeach
         </tr>
       @endforeach
