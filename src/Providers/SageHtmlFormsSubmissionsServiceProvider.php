@@ -23,6 +23,11 @@ class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
     */
     public function boot()
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/html-forms-submissions.php',
+            'html-forms-submissions'
+        );
+
         $this->loadViewsFrom(
             __DIR__.'/../../resources/views',
             'SageHtmlFormsSubmissions',
@@ -88,23 +93,23 @@ class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
 
     private function submissionsTable(\HTML_Forms\Form $form, $fields)
     {
-        $submissions = $this->submissionData(hf_get_form_submissions($form->id), $fields);
+        $submissions = $this->submissionData(hf_get_form_submissions($form->id));
         return view('SageHtmlFormsSubmissions::table', [
             'submissions' => $submissions,
             'fields' => $fields
         ]);
     }
 
-    private function submissionData(array $submissions, Collection $fields)
+    private function submissionData(array $submissions)
     {
-        $data = [];
-        foreach ($submissions as $submission) {
-            $entry = [];
-            foreach ($fields as $key => $label) {
-                $entry[$key] = $submission->data[$key];
+        return array_map(function($submission) {
+            $newSubmission = $submission->data;
+            if (isset($submission->data['anonymous']) && $submission->data['anonymous']) {
+                foreach ($newSubmission as $key => $value) {
+                    $newSubmission[$key] = config('html-forms-submissions.strings.anonymous');
+                }
             }
-            $data[] = $entry;
-        }
-        return $data;
+            return $newSubmission;
+        }, $submissions);
     }
 }

@@ -35,3 +35,16 @@ composer require tombroucke/sage-html-forms-submissions
 | ----------- | ----------- |
 | slug        | The form slug for which you want to display submissions (*)      |
 | id          | The form id for which you want to display submissions (*)        |
+
+## Extra
+
+### Add a checkbox with a name of `anonymous` to anonymize submissions
+
+```html
+<div class="form-check mb-2">
+  <input class="form-check-input" type="checkbox" name="anonymous" value="true" id="anonymous">
+  <label class="form-check-label" for="anonymous">
+    I\'d rather not have my name published
+  </label>
+</div>
+  ```
