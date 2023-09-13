@@ -14,6 +14,10 @@ class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
     */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/html-forms-submissions.php',
+            'html-forms-submissions'
+        );
     }
 
     /**
@@ -23,10 +27,9 @@ class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
     */
     public function boot()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../../config/html-forms-submissions.php',
-            'html-forms-submissions'
-        );
+        $this->publishes([
+            __DIR__.'/../../config/html-forms-submissions.php' => $this->app->configPath('html-forms-submissions.php'),
+        ], 'config');
 
         $this->loadViewsFrom(
             __DIR__.'/../../resources/views',
