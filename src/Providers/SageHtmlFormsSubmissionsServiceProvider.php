@@ -2,8 +2,7 @@
 
 namespace Otomaties\SageHtmlFormsSubmissions\Providers;
 
-use Roots\Acorn\ServiceProvider;
-use Illuminate\Support\Collection;
+use Illuminate\Support\ServiceProvider;
 
 class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
 {
