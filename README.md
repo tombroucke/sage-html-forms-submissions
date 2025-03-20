@@ -19,15 +19,15 @@ composer require tombroucke/sage-html-forms-submissions
 [sage_html_forms_submissions slug="petition" fields="name:Name"]
 ```
 
-| Attribute | Description                                                             |
-| --------- | ----------------------------------------------------------------------- |
-| slug      | The form slug for which you want to display submissions (\*)            |
-| id        | The form id for which you want to display submissions (\*)              |
-| fields    | Comma-separated list of fields you want to show. field_key:Label (\*\*) |
-| sort      | 'asc' or 'desc' (default)                                               |
+| Attribute | Description                                                               |
+| --------- | ------------------------------------------------------------------------- |
+| slug      | The form slug for which you want to display submissions (\*)              |
+| id        | The form id for which you want to display submissions (\*)                |
+| fields    | Comma-separated list of fields you want to show. `field_key:Label` (\*\*) |
+| sort      | `asc` or `desc` (default)                                                 |
 
 (\*) Only one is needed
-(\*\*) You can add indexes / numbering with index:#. E.g. index:#,name:Name
+(\*\*) You can add indexes / numbering with `index:#`. E.g. `index:#,name:Name`
 
 ### Show submission count
 
