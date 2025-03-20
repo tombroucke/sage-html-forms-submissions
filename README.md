@@ -1,6 +1,7 @@
 # Sage HTML Forms submissions
 
-This package adds some functionality to the [HTML Forms plugin](https://wordpress.org/plugins/html-forms/).
+This package can be use in combination with [HTML Forms plugin](https://wordpress.org/plugins/html-forms/).
+You can display form submissions anywhere you want. One of the use-cases is a petition.
 
 ## Installation
 
