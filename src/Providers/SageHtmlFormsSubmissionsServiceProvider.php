@@ -106,12 +106,13 @@ class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
     private function submissionsTable(\HTML_Forms\Form $form, $fields, $sort = 'desc')
     {
         $submissions = array_values($this->submissionData(hf_get_form_submissions($form->id)));
+        $submissions = array_reverse($submissions);
 
         for ($i = 0; $i < count($submissions); $i++) {
             $submissions[$i]['index'] = $i + 1;
         }
 
-        if ($sort == 'desc') {
+        if ($sort === 'desc') {
             $submissions = array_reverse($submissions);
         }
 
