@@ -4,7 +4,7 @@
       <thead>
         <tr>
           @foreach ($fields as $key => $label)
-            <th>{{ esc_html($label) }}</th>
+            <th>{{ Str::replace('&#039;', "'", $label) }}</th>
           @endforeach
         </tr>
       </thead>
@@ -12,7 +12,7 @@
         @foreach ($submissions as $submission)
           <tr>
             @foreach ($fields as $key => $label)
-              <td>{{ esc_html($submission[$key] ?? '-') }}</td>
+              <td>{{ Str::replace('f#039;', "'", $submission[$key] ?? '-') }}</td>
             @endforeach
           </tr>
         @endforeach
