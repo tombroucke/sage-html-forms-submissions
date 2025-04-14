@@ -28,6 +28,7 @@ class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../../config/html-forms-submissions.php' => $this->app->configPath('html-forms-submissions.php'),
+            __DIR__.'/../../resources/views/table.blade.php' => $this->app->resourcePath('views/vendor/SageHtmlFormsSubmissions/table.blade.php'),
         ], 'config');
 
         $this->loadViewsFrom(
