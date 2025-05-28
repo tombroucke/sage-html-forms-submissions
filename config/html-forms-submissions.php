@@ -3,7 +3,7 @@
 return [
 
     'strings' => [
-        'anonymous' => __('Anonymous', 'sage'),
+        'anonymous' => 'Anonymous',
     ],
 
 ];
