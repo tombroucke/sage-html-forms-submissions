@@ -81,7 +81,7 @@ class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
 
             $form = hf_get_form($attributes['slug'] ? $attributes['slug'] : $attributes['id']);
 
-            return count(hf_get_form_submissions($form->id));
+            return count(hf_get_form_submissions($form->id, ['limit' => 9999]));
         });
 
         add_action('hf_form_success', function (\HTML_Forms\submission $submission, \HTML_Forms\Form $form) {
@@ -106,7 +106,7 @@ class SageHtmlFormsSubmissionsServiceProvider extends ServiceProvider
 
     private function submissionsTable(\HTML_Forms\Form $form, $fields, $sort = 'desc')
     {
-        $submissions = array_values($this->submissionData(hf_get_form_submissions($form->id)));
+        $submissions = array_values($this->submissionData(hf_get_form_submissions($form->id, ['limit' => 9999])));
         $submissions = array_reverse($submissions);
 
         for ($i = 0; $i < count($submissions); $i++) {
